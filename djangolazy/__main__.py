@@ -10,8 +10,9 @@ import argparse
 import sys
 from pathlib import Path
 
-from setupscript import system, projectsetup, startserver, staticsetup, createsuperuser
 
+from setupscript import system, projectsetup, startserver, staticsetup, createsuperuser
+from . import __version__
 
 def main():
     system(path, venv, project, app, file, args)
