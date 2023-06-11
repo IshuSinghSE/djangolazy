@@ -1,2 +1,3 @@
 # scripts
-Quelques scripts utiles
+
+Script for initial django project setup
