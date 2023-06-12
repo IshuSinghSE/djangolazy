@@ -1,33 +1,31 @@
-from distutils.core import setup
-from djangolazy.__init__ import __version__
+from setuptools import setup
+from version import __version__ as version
+
 with open("README.md", "r", encoding = "utf-8") as fh:
     long_description = fh.read()
 
 setup(
-  name = 'djangolazy',         # How you named your package folder (MyLib)
-  packages = ['djangolazy'],   # Chose the same as "name"
-  version = f'{__version__}',      # Start with a small number and increase it with every change you make
-  license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
-  description = 'Script for initial django project setup',   # Give a short description about your library
+  name = 'djangolazy',
+  packages = ['djangolazy'],
+  version =  version,
+  license='MIT',
+  description = 'Script for initial django project setup',
   long_description = long_description,
   long_description_content_type = "text/markdown",
-  author = ' Ishu Singh',                   # Type in your name
-  author_email = 'ishu.111636@gmail.com',      # Type in your E-Mail
-  url = 'https://github.com/IshuSinghSE',   # Provide either the link to your github or to your website
-  download_url = f'https://github.com/IshuSinghSE/djangolazy/archive/refs/tags/v.{__version__}.tar.gz',    # I explain this later on
-  keywords = ['django', 'setup', 'autosetup','setupscript'],   # Keywords that define your package best
-  install_requires=[            # I get to this in a second
+  author = ' Ishu Singh',
+  author_email = 'ishu.111636@gmail.com',
+  url = 'https://github.com/IshuSinghSE',
+  download_url = f'https://github.com/IshuSinghSE/djangolazy/archive/refs/tags/v.{version}.tar.gz',
+  keywords = ['django', 'setup', 'autosetup','setupscript'],
+  install_requires=[
             'urllib3',
             ],
   classifiers=[
-    'Development Status :: 3 - Alpha',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
-    'Intended Audience :: Developers',      # Define that your audience are developers
+    'Development Status :: 3 - Alpha',
+    'Intended Audience :: Developers',
     'Topic :: Software Development :: Build Tools',
-    'License :: OSI Approved :: MIT License',   # Again, pick a license
-    'Programming Language :: Python :: 3',      #Specify which pyhton versions that you want to support
-    'Programming Language :: Python :: 3.4',
-    'Programming Language :: Python :: 3.5',
-    'Programming Language :: Python :: 3.6',
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.11',
   ],
 )

@@ -1,0 +1,86 @@
+{
+    "app": {
+        "index": [
+            "from django.conf import settings",
+            "from django.http import HttpResponse\n",
+            "def index(request):",
+            "\thtml = f'''",
+            "\t<html>",
+            "\t<body style='background-color:#f4f7ff'>",
+            "\t<a href='http://localhost:8000/admin' target='_blank' style='text-decoration:None;'><h3> Admin page </h3></a>",
+            "\t<h3>username & password : admin</h3>",
+            "\t<p> Please activate the virtual environment Manually , after stopping server! </br><strong> using  <code style='font-size:15px; background-color:#d7dae0; border-radius:5px;'> venv/Scripts/activate </code> , where venv is your virtual environment name</strong></p>",
+            "\t<script src='' async defer></script>",
+            "\t</body>",
+            "\t</html>",
+            "\t'''",
+            "\treturn HttpResponse(html)"
+        ],
+        "urls": [
+            "from django.urls import path, include",
+            "from .views import index\n",
+            "urlpatterns = [",
+            "\tpath('',index, name='index'),",
+            "\n]"
+        ],
+        "views": [
+            "from django.conf import settings",
+            "from django.shortcuts import render\n",
+            "def index(request):",
+            "\treturn render(request, 'index.html',{})"
+        ]
+    },
+    "project": {
+        "settings": {
+            "email_backend": [
+                "\n\n### Email Configuration ###",
+                "EMAIL_BACKEND   = 'django.core.mail.backends.smtp.EmailBackend'",
+                "EMAIL_HOST      = 'smtp.mail.yahoo.com'"
+            ],
+            "email_protocol": [
+                "EMAIL_PORT    = 587",
+                "EMAIL_USE_TLS = True",
+                "EMAIL_USE_SSL = False",
+                "EMAIL_TIMEOUT = 30"
+            ],
+            "email_secret": [
+                "EMAIL_USER",
+                "EMAIL_PASSWORD",
+                "DEFAULT_FROM_EMAIL",
+                "RECIPIENT_ADDRESS"
+            ],
+            "import": [
+                "from dotenv import load_dotenv",
+                "import os",
+                "load_dotenv()"
+            ],
+            "install_app": [
+                "\t'app.apps.AppConfig',"
+            ],
+            "path": [
+                "STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]",
+                "STATIC_ROOT = os.path.join(BASE_DIR,'assets')\n",
+                "MEDIA_URL  = '/media/'",
+                "MEDIA_ROOT = os.path.join(BASE_DIR,'media')"
+            ],
+            "secret": "SECRET_KEY"
+        },
+        "urls": [
+            "from django.contrib import admin",
+            "from django.urls import path, include",
+            "from django.conf import settings",
+            "from django.conf.urls.static import static\n",
+            "urlpatterns = [",
+            "\tpath('admin/', admin.site.urls),",
+            "\tpath('',include('app.urls')),",
+            "]",
+            "urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)"
+        ],
+        "wsgi": [
+            "from django.contrib.auth.models import User",
+            "users = User.objects.all()",
+            "if not users:",
+            "\tUser.objects.create_superuser(username='admin', email='user@example.com', password='admin', is_active=True, is_staff=True)"
+        ]
+    }
+}
