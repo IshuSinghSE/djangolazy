@@ -219,14 +219,7 @@ def createsuperuser():
 
 def startserver():
 
-    print('-> Everything has been setup .💗.\nstarting server...')
-    time.sleep(0.5)
-    # os.system(
-    #     f'start "C:\Program Files/Google\Chrome\Application\chrome.exe"  http://127.0.0.1:8000/admin/')
-    os.system(
-        f'start "C:\Program Files/Google\Chrome\Application\chrome.exe"  http://127.0.0.1:8000/')
-    # os.system(f'"{path}/{venv}/Scripts/activate.bat"')
-    os.system(f"{path}/{venv}/Scripts/python.exe {project}/manage.py runserver")
+from setupscript import system, projectsetup, startserver, staticsetup, createsuperuser
 
 
 def main():
