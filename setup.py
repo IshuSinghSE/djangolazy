@@ -18,7 +18,6 @@ setup(
   download_url = f'https://github.com/IshuSinghSE/djangolazy/archive/refs/tags/v.{version}.tar.gz',    # I explain this later on
   keywords = ['django', 'setup', 'autosetup','setupscript'],   # Keywords that define your package best
   python_requires= '>=3.7',
-  entry_points='djangolazy = djangolazy:version',
   install_requires=[
             'urllib3',
             ],
