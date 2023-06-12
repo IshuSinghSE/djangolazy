@@ -2,6 +2,12 @@
 *.pyc
 *.tar.gz
 *.egg-info
+*.egg
 /pyc
 /dist
+/lib
 /__pycache__
+/build
+/dist
+/*.egg-info
+*.zip

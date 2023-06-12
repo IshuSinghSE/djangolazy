@@ -1,5 +1,5 @@
 from setuptools import setup
-from djangolazy import __version__ as version
+from djangolazy.version import __version__ as version
 
 with open("README.md", "r", encoding = "utf-8") as fh:
     long_description = fh.read()
@@ -18,6 +18,10 @@ setup(
   download_url = f'https://github.com/IshuSinghSE/djangolazy/archive/refs/tags/v.{version}.tar.gz',    # I explain this later on
   keywords = ['django', 'setup', 'autosetup','setupscript'],   # Keywords that define your package best
   python_requires= '>=3.7',
+  entry_points={
+    'console_scripts':[
+                'djangolazy =  djangolazy:main',
+                   ],},
   install_requires=[
             'urllib3',
             ],
