@@ -11,6 +11,7 @@ import sys
 from pathlib import Path
 from version import __version__ as version 
 
+<<<<<<< HEAD
 
 def file_opener(name, mode, content=[]):
     if mode == 'r':
@@ -219,8 +220,19 @@ def createsuperuser():
 
 def startserver():
 
-from setupscript import system, projectsetup, startserver, staticsetup, createsuperuser
+    print('-> Everything has been setup .💗.\nstarting server...')
+    time.sleep(0.5)
+    # os.system(
+    #     f'start "C:\Program Files/Google\Chrome\Application\chrome.exe"  http://127.0.0.1:8000/admin/')
+    os.system(
+        f'start "C:\Program Files/Google\Chrome\Application\chrome.exe"  http://127.0.0.1:8000/')
+    # os.system(f'"{path}/{venv}/Scripts/activate.bat"')
+    os.system(f"{path}/{venv}/Scripts/python.exe {project}/manage.py runserver")
+=======
+>>>>>>> f75b5f1eb9c46d52cc6b3d46aedc3bd7e178b2c7
 
+from setupscript import system, projectsetup, startserver, staticsetup, createsuperuser
+from . import __version__
 
 def main():
         system()
